@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.42063492063492064" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.javafxativ2.CadastroController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="301.0">
+         <children>
+            <Text layoutX="129.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cadastro de colaborador">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Text>
+            <Text fx:id="tipoLabel" layoutX="18.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tipo de colaborador" />
+            <TextField fx:id="nomeField" layoutX="228.0" layoutY="126.0" prefHeight="26.0" prefWidth="152.0" />
+            <Text fx:id="nomeLabel" layoutX="14.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" />
+            <Text fx:id="salarioLabel" layoutX="14.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salário" />
+            <TextField fx:id="salarioField" layoutX="224.0" layoutY="164.0" prefHeight="26.0" prefWidth="152.0" />
+            <Text fx:id="dataLabel" layoutX="14.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de admissao" />
+            <Text fx:id="bonusLabel" layoutX="16.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonus" />
+            <TextField fx:id="bonusField" layoutX="227.0" layoutY="249.0" />
+            <DatePicker fx:id="dataAdmissaoField" layoutX="227.0" layoutY="210.0" prefHeight="26.0" prefWidth="152.0" />
+            <ComboBox fx:id="turnoField" layoutX="228.0" layoutY="288.0" prefHeight="26.0" prefWidth="152.0" />
+            <Text fx:id="turnoLabel" layoutX="15.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Turno" />
+            <Text fx:id="bonusCoopLabel" layoutX="14.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bonus cooparticipacao" />
+            <TextField fx:id="bonusCoopField" layoutX="228.0" layoutY="320.0" />
+            <TextField fx:id="areaProgField" layoutX="224.0" layoutY="360.0" prefHeight="26.0" prefWidth="152.0" />
+            <Text fx:id="areaLabel" layoutX="14.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Área de programação" />
+            <Button fx:id="limparButton" layoutX="206.0" layoutY="407.0" mnemonicParsing="false" text="Limpar" />
+            <Button fx:id="cadastrarButton" layoutX="326.0" layoutY="407.0" mnemonicParsing="false" onAction="#btnAdicionarAction" text="Cadastrar" />
+            <Button fx:id="voltarButton" layoutX="78.0" layoutY="407.0" mnemonicParsing="false" onAction="#voltarParaTelaAnterior" text="Voltar" />
+            <ComboBox fx:id="tipoColaboradorField" layoutX="231.0" layoutY="77.0" prefHeight="26.0" prefWidth="152.0" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="1200.0">
+         <children>
+            <TableView fx:id="tabela" layoutX="14.0" layoutY="99.0" prefHeight="282.0" prefWidth="623.0">
+              <columns>
+                  <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="colNome" prefWidth="75.0" text="Nome" />
+                <TableColumn fx:id="colCargo" prefWidth="75.0" text="Cargo" />
+                  <TableColumn fx:id="colDataAdmissao" prefWidth="75.0" text="Data de admissão" />
+                  <TableColumn fx:id="colSalario" prefWidth="75.0" text="Salário" />
+                  <TableColumn fx:id="colBonus" prefWidth="75.0" text="Bônus" />
+                  <TableColumn fx:id="colBonusCoop" prefWidth="75.0" text="Bônus coop." />
+                  <TableColumn fx:id="colTurno" prefWidth="75.0" text="Turno" />
+                  <TableColumn fx:id="colAreaProg" prefWidth="75.0" text="Área de prog." />
+              </columns>
+            </TableView>
+            <Text layoutX="211.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Colaboradores cadastrados">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Text>
+            <Button fx:id="buttonLerDados" layoutX="115.0" layoutY="407.0" mnemonicParsing="false" onAction="#escolherArquivo" text="Ler dados" />
+            <Button fx:id="buttonGravarDados" layoutX="238.0" layoutY="407.0" mnemonicParsing="false" onAction="#btnSalvarAction" text="Gravar dados" />
+            <Button layoutX="373.0" layoutY="407.0" mnemonicParsing="false" onAction="#remover" text="Excluir" />
+            <Button fx:id="buttonExcluir" layoutX="464.0" layoutY="407.0" mnemonicParsing="false" onAction="#remover" text="Adicionar bônus" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
